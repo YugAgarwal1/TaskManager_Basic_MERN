@@ -13,7 +13,6 @@ const Dashboard = ({ user, onLogout }) => {
       console.error('Logout failed:', err);
     }
   };
-
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}

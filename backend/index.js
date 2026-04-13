@@ -12,7 +12,7 @@ app.use(cors({
   credentials: true
 }));
 app.use(session({
-  secret: "secretkey",
+  secret: process.env.SESSION_SECRET || "secretkey",
   resave: false,
   saveUninitialized: false
 }));
@@ -20,7 +20,7 @@ const authRoutes = require("./routes/authRoutes");
 const notesRoutes = require("./routes/notesRoutes")
 app.use("/auth", authRoutes);
 app.use("/notes", notesRoutes);
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
